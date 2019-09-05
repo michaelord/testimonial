@@ -1,0 +1,31 @@
+.testimonial {
+	$parent: &;
+
+	// --font-size:30px;
+
+	&--lg {
+		--font-size: 30px;
+	}
+
+	&__logo {
+		display: block;
+		margin-bottom: 20px;
+	}
+
+	&__icon {
+		display: block;
+
+		svg {
+			width: 100%;
+			max-width: 50px;
+		}
+	}
+
+	&__body {
+		font-size: var(--font-size, inherit);
+	}
+
+	&--align-center {
+		text-align: center;
+	}
+}
