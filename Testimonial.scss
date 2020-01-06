@@ -1,13 +1,20 @@
 .testimonial {
 	$parent: &;
 
-	// --font-size:30px;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	//min-height: 100%;
 
-	&--lg {
-		--font-size: 30px;
+	&--md {
+		--font-size: 120%;
 	}
 
-	&__logo {
+	&--lg {
+		--font-size: 150%;
+	}
+
+	&__image {
 		display: block;
 		margin-bottom: 20px;
 	}
@@ -22,10 +29,50 @@
 	}
 
 	&__body {
-		font-size: var(--font-size, inherit);
+		> *:last-child {
+			margin-bottom: 0;
+		}
+
+		.blockquote__content p {
+			font-size: var(--font-size, inherit);
+		}
+	}
+
+	&__footer {
+		margin-top: auto;
+		img {
+			&:not(:only-child) {
+				display: inline-block;
+
+				margin-top: var(--space-md);
+			}
+		}
 	}
 
 	&--align-center {
 		text-align: center;
 	}
+
+	/*
+	&--one {
+		blockquote{
+			padding: var(--space-xl);
+			background:var(--color-primary);
+			border-radius:var(--radius-lg);
+			color:#fff;position:relative;
+			margin-bottom: var(--space-lg);
+			&:after{
+				content:"";
+				position: absolute;height:30px;width:30px;
+				background:var(--color-primary);
+				border-radius:var(--radius-md);
+				transform: rotate(-135deg);
+				bottom:-10px;
+				left: 50%;
+			}
+		}
+
+		#{$parent}__footer{text-align:center;}
+	}
+	*/
 }

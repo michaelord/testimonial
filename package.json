@@ -1,20 +1,26 @@
 {
-  "name": "testimonial",
-  "private": true,
-  "description": "...",
-  "version": "0.1.0",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/michaelord/testimonial.git"
-  },
-  "devDependencies": {},
-  "author": "michaelord",
-  "keywords": [],
-  "dependencies": {
-    "components/editable": "http://github.com/michaelord/editable.git",
-    "components/people": "http://github.com/michaelord/people.git",
-    "components/libs": "http://github.com/michaelord/libs.git",
-    "components/icon": "http://github.com/michaelord/icon.git"
-  }
+	"name": "testimonial",
+	"private": true,
+	"description": "...",
+	"version": "0.1.0",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/michaelord/testimonial.git"
+	},
+	"devDependencies": {},
+	"author": "michaelord",
+	"keywords": [],
+	"dependencies": {
+		"components/icon": "http://github.com/michaelord/icon.git",
+		"components/types": "http://github.com/michaelord/types.git",
+		"components/layout": "http://github.com/michaelord/layout.git",
+		"components/libs": "http://github.com/michaelord/libs.git",
+		"components/block": "http://github.com/michaelord/block.git",
+		"components/testimonial": "http://github.com/michaelord/testimonial.git",
+		"components/content": "http://github.com/michaelord/content.git",
+		"components/carousel": "http://github.com/michaelord/carousel.git",
+		"components/editable": "http://github.com/michaelord/editable.git",
+		"components/people": "http://github.com/michaelord/people.git"
+	}
 }

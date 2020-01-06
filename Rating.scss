@@ -1,0 +1,32 @@
+.rating {
+	$parent: &;
+
+	&__score {
+		margin-left: 5px;
+		display: inline-block;
+		padding: 5px;
+		line-height: 1;
+		vertical-align: middle;
+		position: relative;
+		font-size: 13px;
+
+		&:before {
+			content: '';
+			border-radius: 8px;
+			background-color: currentColor;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			left: 0;
+			height: 100%;
+			opacity: 0.2;
+		}
+	}
+
+	.icon {
+		width: 20px;
+		height: 20px;
+		margin: 0 4px;
+		color: var(--color-primary);
+	}
+}

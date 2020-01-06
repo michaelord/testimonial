@@ -1,56 +1,43 @@
-import * as React from 'react';
-
+import {Blockquote} from 'components/editable';
+import {BlockquoteBaseProps} from 'components/editable/Blockquote';
+//import {Icon} from 'components/icon';
+//import IconQuote from 'components/icon/quote.inline.svg';
+import {getModifiers} from 'components/libs';
+import {Img} from 'components/media';
+import * as Types from 'components/types';
+import React from 'react';
+import {Rating, RatingProps} from './Rating';
 import './Testimonial.scss';
 
-import {RichText} from 'components/editable';
-
-import {Author} from 'components/people';
-
-import {getModifiers} from 'components/libs';
-
-import {Img, ImgProps} from 'components/editable';
-
-import IconQuote from 'components/icon/quote.inline.svg';
-
-type TestimonialProps = {
-	image?: ImgProps;
+export type TestimonialProps = BlockquoteBaseProps & {
+	image?: Types.Image;
 	align?: string;
-	hasAvatar?: boolean;
-	quote: string;
 	size?: string;
-	name: string;
-	position: string;
+	rating?: RatingProps;
 };
 
 export const Testimonial = (props: TestimonialProps) => {
 	const base: string = 'testimonial';
-
-	const {quote, align, hasAvatar = true, size = 'default', image, name, position} = props;
+	const {image, align, size, rating, ...blockquote} = props;
 
 	const atts = {
 		className: getModifiers(base, {
 			size,
-			align: `align-${align}`,
+			align: align ? `align-${align}` : null,
 		}),
 	};
 
 	return (
 		<div {...atts}>
-			{image ? (
-				<div className={`${base}__logo`}>
+			{image && (
+				<div className={`${base}__image`}>
 					<Img {...image} />
 				</div>
-			) : (
-				<span className={`${base}__icon`}>
-					<IconQuote className="icon" />
-				</span>
 			)}
 			<div className={`${base}__body`}>
-				<RichText content={quote} />
+				<Blockquote style="none" {...blockquote} />
+				{rating && <Rating {...rating} />}
 			</div>
-			<footer>
-				<Author name={name} position={position} hasAvatar={hasAvatar} />
-			</footer>
 		</div>
 	);
 };
